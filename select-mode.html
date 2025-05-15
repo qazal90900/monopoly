@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly - Select Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="back-btn" onclick="goBack()">←</button>
+        <h1 class="title">انتخاب حالت بازی</h1>
+        <div class="mode-selection">
+            <div class="mode-card" onclick="startGame('single')">
+                <img src="271a392b-a052-4384-870e-8856c6382f45.jpg" alt="Single Player" class="mode-image">
+                <h2>تک‌نفره</h2>
+            </div>
+            <div class="mode-card" onclick="startGame('passplay')">
+                <img src="nobat.jpg" alt="Pass & Play" class="mode-image">
+                <h2>نوبت به نوبت</h2>
+            </div>
+            <div class="mode-card" onclick="startGame('online')">
+                <img src="multi.jpg" alt="Online Multiplayer" class="mode-image">
+                <h2>آنلاین با دوستان</h2>
+            </div>
+        </div>
+    </div>
+    <script src="mono.js"></script>
+</body>
+</html>

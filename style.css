@@ -1,0 +1,759 @@
+body {
+    font-family: 'Vazir', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* استایل‌های صفحه شروع (index.html) */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.start-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.button-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    top: -30px;
+}
+
+.start-btn {
+    padding: 15px 50px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #e60000;
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* استایل‌های صفحه انتخاب حالت (select-mode.html) */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 20px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #1976d2;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #d32f2f;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mode-selection {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mode-card {
+    background: linear-gradient(135deg, #42a5f5, #1976d2);
+    border-radius: 20px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mode-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mode-image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.mode-card h2 {
+    color: white;
+    font-size: 1.3em;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* استایل‌های صفحه انتخاب صفحه بازی (select-board.html) */
+.board-selection {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.board-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* ارتفاع ثابت برای کارد‌ها */
+}
+
+.board-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.board-card.selected {
+    border: 3px solid #ff0000;
+}
+
+.board-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.board-card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.board-card p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.board-location {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #333;
+    background: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.select-btn {
+    padding: 15px 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.select-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #e60000;
+}
+
+.select-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* استایل‌های صفحه آنلاین (online-match.html) */
+.match-status {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opponent-icon {
+    width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#start-match-btn {
+    padding: 15px 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+#start-match-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #45a049;
+}
+
+#start-match-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* استایل‌های صفحه بازی (game.html) */
+.game-screen {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+}
+
+.game-board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-image {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px;
+}
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 1.5em;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.settings-icon:hover {
+    background-color: #1976d2;
+    transform: rotate(90deg);
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+    display: none;
+    animation: slideIn 0.3s ease-out;
+    width: 220px;
+    padding: 10px 0;
+}
+
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hamburger-menu li {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.hamburger-menu li:last-child {
+    border-bottom: none;
+}
+
+.hamburger-menu button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    background: none;
+    border: none;
+    text-align: right;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hamburger-menu button:hover {
+    background-color: #e0f7fa;
+    color: #1976d2;
+}
+
+.hamburger-menu #sound-icon {
+    transition: transform 0.3s;
+}
+
+.hamburger-menu #sound-icon.muted {
+    transform: scale(0.8);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dice-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    width: 90%;
+    max-width: 400px;
+}
+
+.dice-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    width: 100%;
+}
+
+.dice-btn:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+.dice-btn:active {
+    transform: scale(0.95);
+}
+
+.turn-info {
+    margin-top: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.turn-info p {
+    margin: 5px 0;
+}
+
+/* استایل‌های فرم لاگین و ساخت حساب */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-box, .signup-box, .welcome-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    position: relative;
+}
+
+.login-box h2, .signup-box h2, .welcome-box h2 {
+    font-size: 1.8em;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.login-box p, .signup-box p, .welcome-box p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-box button, .signup-box button, .welcome-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.login-box .close-btn {
+    background-color: #f44336;
+}
+
+.login-box .signup-btn {
+    background-color: #2196f3;
+}
+
+.signup-box .close-btn {
+    background-color: #f44336;
+}
+
+.signup-box .submit-btn {
+    background-color: #4caf50;
+}
+
+.welcome-box .ok-btn {
+    background-color: #000000;
+    width: 100px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.login-box button:hover, .signup-box button:hover, .welcome-box button:hover {
+    opacity: 0.9;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* استایل برای تصویر خوش‌آمدگویی */
+.welcome-box img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* استایل‌های صفحه پروفایل */
+.profile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.profile-box, .edit-profile-box {
+    background: linear-gradient(135deg, #ffffff, #e3f2fd);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+.profile-box h2, .edit-profile-box h2 {
+    font-size: 1.8em;
+    color: #d32f2f;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.profile-box .info, .stats {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.profile-box .info span, .stats span {
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.edit-profile-box .edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-profile-box input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.edit-profile-box button, .profile-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.profile-box .edit-btn {
+    background-color: #2196f3;
+}
+
+.profile-box .close-btn {
+    background-color: #f44336;
+}
+
+.edit-profile-box .save-btn {
+    background-color: #4caf50;
+}
+
+.edit-profile-box .cancel-btn {
+    background-color: #f44336;
+}
+
+.profile-box button:hover, .edit-profile-box button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* مدیا کوئری‌ها برای رسپانسیو کردن */
+@media (max-width: 768px) {
+    .mode-selection {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mode-card {
+        width: 80%;
+    }
+    .board-selection {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .board-card {
+        width: 90%;
+        max-width: 350px;
+        height: 380px;
+    }
+    .board-image {
+        height: 180px;
+    }
+    .board-location {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+    .select-btn {
+        font-size: 1.3em;
+        padding: 12px 40px;
+    }
+    .game-board .board-image {
+        width: 100%;
+        max-width: 600px;
+    }
+    .settings-icon {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 1.2em;
+    }
+    .dice-container {
+        bottom: 10px;
+    }
+    .dice-btn {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+    .turn-info {
+        font-size: 1em;
+    }
+    .start-screen {
+        justify-content: center;
+    }
+    .background-image {
+        object-fit: contain;
+        height: 70%;
+        top: 0;
+    }
+    .start-btn {
+        font-size: 1.8em;
+        padding: 15px 50px;
+        margin-top: 20px;
+    }
+    .button-wrapper {
+        margin-bottom: 0;
+        position: relative;
+        top: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-selection {
+        gap: 10px;
+    }
+    .board-card {
+        width: 95%;
+        max-width: 300px;
+        height: 350px;
+    }
+    .board-image {
+        height: 150px;
+    }
+    .board-card h2 {
+        font-size: 1.3em;
+    }
+    .board-card p {
+        font-size: 0.9em;
+    }
+    .board-location {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    .select-btn {
+        font-size: 1.2em;
+        padding: 10px 30px;
+    }
+    .title {
+        font-size: 2em;
+    }
+    .game-board .board-image {
+        max-width: 400px;
+    }
+    .settings-icon {
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        font-size: 1em;
+    }
+    .dice-btn {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+    .start-screen {
+        justify-content: center;
+    }
+    .background-image {
+        object-fit: contain;
+        height: 60%;
+    }
+    .start-btn {
+        font-size: 1.6em;
+        padding: 12px 40px;
+        margin-top: 15px;
+    }
+    .button-wrapper {
+        top: -20px;
+    }
+}

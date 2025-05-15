@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصویر صفحه بازی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-screen">
+        <div class="game-board">
+            <!-- تصویر ثابت صفحه بازی مونوپولی -->
+            <img src="board3.jpg" alt="صفحه بازی مونوپولی" class="board-image">
+            <button class="settings-icon" onclick="toggleMenu()">⚙️</button>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <ul>
+                    <li><button onclick="continueGame()">ادامه بازی</button></li>
+                    <li><button onclick="showProfile()">پروفایل</button></li>
+                    <li><button onclick="soundSettings()"><span id="sound-icon">🔊</span> صدا</button></li>
+                    <li><button onclick="exitGame()">خروج</button></li>
+                </ul>
+            </div>
+            <div class="dice-container">
+                <button class="dice-btn" onclick="rollDice()">پرتاب تاس</button>
+                <div class="turn-info">
+                    <p id="current-turn">نوبت: بازیکن</p>
+                    <p id="dice-result">نتیجه تاس: -</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="background-audio" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <script src="mono.js"></script>
+</body>
+</html>

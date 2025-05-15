@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly - Online Match</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <button class="back-btn" onclick="goBack()">←</button>
+        <h1 class="title">پیدا کردن حریف آنلاین</h1>
+        <div class="match-status">
+            <div id="opponent-image" style="display: none;">
+                <img src="opponent-icon.jpg" alt="Opponent Icon" class="opponent-icon">
+            </div>
+            <p id="match-message">در حال پیدا کردن حریف هستیم...</p>
+        </div>
+        <button id="start-match-btn" class="start-btn" style="display: none;" onclick="startOnlineGame()">بازی با حریف</button>
+    </div>
+    <script src="mono.js"></script>
+</body>
+</html>

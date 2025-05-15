@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly - Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-screen">
+        <div class="game-board">
+            <img src="board3.jpg" alt="Monopoly Board" class="board-image">
+            <button class="settings-icon" onclick="toggleMenu()">⚙</button>
+            <!-- منوی همبرگری -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <ul>
+                    <li><button onclick="showProfile()">👤 پروفایل من</button></li>
+                    <li><button onclick="exitGame()">🚪 خروج بازی</button></li>
+                    <li><button onclick="continueGame()">▶ ادامه بازی</button></li>
+                    <li><button onclick="soundSettings()"><span id="sound-icon">🔊</span> تنظیمات صدا</button></li>
+                </ul>
+            </div>
+            <!-- بخش تاس و اطلاعات نوبت -->
+            <div class="dice-container">
+                <button class="dice-btn" onclick="rollDice()">🎲 پرتاب تاس</button>
+                <div class="turn-info">
+                    <p id="current-turn">نوبت: در حال بارگذاری...</p>
+                    <p id="dice-result">نتیجه تاس: -</p>
+                </div>
+            </div>
+            <!-- پخش خودکار آهنگ -->
+            <audio id="background-audio" autoplay loop>
+                <source src="music.mp3" type="audio/mpeg">
+                مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+            </audio>
+        </div>
+    </div>
+    <script src="mono.js"></script>
+</body>
+</html>
