@@ -291,7 +291,8 @@ function initializeGame() {
 
     document.getElementById("current-turn").textContent = `نوبت: ${playerName}`;
 }
-
+pimage = "img/p2.png";
+rolls = 0;
 // پرتاب تاس
 function rollDice() {
     const userData = JSON.parse(localStorage.getItem("userData")) || { name: "کاربر ناشناس" };
@@ -313,5 +314,16 @@ function rollDice() {
             isPlayerTurn = true;
             document.getElementById("current-turn").textContent = `نوبت: ${playerName}`;
         }, 1000);
+    }
+    let propimg = document.querySelector("#properties img");
+    if(propimg.src != pimage){
+        temp = propimg.src;
+        propimg.src = pimage;
+        pimage = temp;
+    }
+    rolls +=1;
+    if(rolls == 5){
+        alert(`${playerName} برنده شد!`);
+        window.location.href = "gameover.html";
     }
 }
